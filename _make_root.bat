@@ -6,7 +6,11 @@ rem example : _ssl_make_root gilgil
 rem --------------------------------------------------------
 set COMMON_NAME=%1
 
-if exist root goto demo_ca
+if exist root goto eof
+
+rem --------------------------------------------------------
+rem make root folder
+rem --------------------------------------------------------
 mkdir root
 
 rem --------------------------------------------------------
@@ -24,18 +28,4 @@ rem make crt file(root.crt - cacert.pem)
 rem --------------------------------------------------------
 openssl x509 -req -days 3650 -signkey root\root.key -in root\root.csr -out root\root.crt
 
-:demo_ca
-rem --------------------------------------------------------
-rem initialize demoCA folder
-rem --------------------------------------------------------
-mkdir demoCA
-mkdir demoCA\newcerts
-mkdir demoCA\private
-copy  root\root.key demoCA\private\cakey.pem
-copy  root\root.crt demoCA\cacert.pem
-
-rem --------------------------------------------------------
-rem make default files
-rem --------------------------------------------------------
-touch .\demoCA\index.txt
-echo 01 > .\demoCA\serial
+:eof

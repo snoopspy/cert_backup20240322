@@ -12,7 +12,7 @@ del .rnd
 rem --------------------------------------------------------
 rem initialize demoCA folder
 rem --------------------------------------------------------
-call  rm_folder demoCA
+call  :rm_folder demoCA
 mkdir demoCA
 mkdir demoCA\newcerts
 mkdir demoCA\private
