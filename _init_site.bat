@@ -1,7 +1,7 @@
 @echo off
 
 rem --------------------------------------------------------
-rem files
+rem delete site files
 rem --------------------------------------------------------
 del *.pem
 del *.csr
@@ -10,21 +10,25 @@ del *.crt
 del .rnd
 
 rem --------------------------------------------------------
-rem folder
+rem initialize demoCA folder
 rem --------------------------------------------------------
-call :rm_folder demoCA
+call  rm_folder demoCA
+mkdir demoCA
+mkdir demoCA\newcerts
+mkdir demoCA\private
+copy  root\root.key demoCA\private\cakey.pem
+copy  root\root.crt demoCA\cacert.pem
+
+rem --------------------------------------------------------
+rem make default files
+rem --------------------------------------------------------
+touch .\demoCA\index.txt
+echo 01 > .\demoCA\serial
 
 rem --------------------------------------------------------
 rem epilogue
 rem --------------------------------------------------------
-goto :eof
-
-rem --------------------------------------------------------
-rem rm_file
-rem --------------------------------------------------------
-:rm_file
-  del /s %1 %2 %3 %4 %5 %6 %7 %8 
-goto :eof
+goto eof
 
 rem --------------------------------------------------------
 rem rm_folder
@@ -35,4 +39,6 @@ rem --------------------------------------------------------
   for /f "tokens=*" %%I in ('dir /b /s /ad %__path__%*') do if %%~nxI==%__path__% (
     rmdir /s /q "%%I"
   )
-goto :eof
+goto eof
+
+:eof
