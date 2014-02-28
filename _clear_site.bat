@@ -1,28 +1,18 @@
 @echo off
 
 rem --------------------------------------------------------
-rem call _clear_site
+rem delete site files
 rem --------------------------------------------------------
-call _clear_site.bat
+del *.pem
+del *.csr
+del *.key
+del *.crt
+del .rnd
 
 rem --------------------------------------------------------
-rem initialize demoCA folder
+rem remove rm_folder folder
 rem --------------------------------------------------------
-mkdir demoCA
-mkdir demoCA\newcerts
-mkdir demoCA\private
-
-rem --------------------------------------------------------
-rem copy root files
-rem --------------------------------------------------------
-copy  root\root.key demoCA\private\cakey.pem
-copy  root\root.crt demoCA\cacert.pem
-
-rem --------------------------------------------------------
-rem make default files
-rem --------------------------------------------------------
-touch .\demoCA\index.txt
-echo 01 > .\demoCA\serial
+call  :rm_folder demoCA
 
 rem --------------------------------------------------------
 rem epilogue
