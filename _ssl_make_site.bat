@@ -20,7 +20,7 @@ openssl req -new -subj "/C=KR/CN=%COMMON_NAME%" -key %BASE_FILE_NAME%.key -out %
 rem --------------------------------------------------------
 rem make crt file(test.com.crt)
 rem --------------------------------------------------------
-openssl ca -batch -days 3650 -policy policy_anything -out %BASE_FILE_NAME%.crt -infiles %BASE_FILE_NAME%.csr
+openssl ca -batch -startdate 20140301000000Z -enddate 20240227000000Z -policy policy_anything -out %BASE_FILE_NAME%.crt -infiles %BASE_FILE_NAME%.csr
 
 rem --------------------------------------------------------
 rem make key crt file(test.com.pem)
