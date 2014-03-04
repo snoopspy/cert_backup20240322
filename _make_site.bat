@@ -1,9 +1,10 @@
 @echo off
 
 rem --------------------------------------------------------
-rem usage   : _ssl_make_site <common name>
-rem example : _ssl_make_site test.com
+rem usage   : _make_site <common name>
+rem example : _make_site test.com
 rem --------------------------------------------------------
+if "%1"=="" goto usage
 set BASE_FILE_NAME=%1
 set COMMON_NAME=%1
 
@@ -29,3 +30,10 @@ copy %BASE_FILE_NAME%.key + %BASE_FILE_NAME%.crt %BASE_FILE_NAME%.pem
 rem del  %BASE_FILE_NAME%.key
 rem del  %BASE_FILE_NAME%.csr
 rem del  %BASE_FILE_NAME%.crt
+goto eof
+
+:usage
+echo "usage   : _make_site <common name>"
+echo "example : _make_site test.com"
+
+:eof
