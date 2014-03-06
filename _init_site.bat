@@ -19,10 +19,15 @@ copy  root\root.key demoCA\private\cakey.pem
 copy  root\root.crt demoCA\cacert.pem
 
 rem --------------------------------------------------------
-rem make default files
+rem make other files
 rem --------------------------------------------------------
 touch .\demoCA\index.txt
 echo 01 > .\demoCA\serial
+
+rem --------------------------------------------------------
+rem make default.* files
+rem --------------------------------------------------------
+call _make_site default
 
 rem --------------------------------------------------------
 rem epilogue
