@@ -1,12 +1,16 @@
 @echo off
 
 rem --------------------------------------------------------
-rem usage   : _make_site <common name>
+rem usage   : _make_site <common name> [<base file name>]
 rem example : _make_site test.com
 rem --------------------------------------------------------
 if "%1"=="" goto usage
-set BASE_FILE_NAME=%1
 set COMMON_NAME=%1
+set BASE_FILE_NAME=%1
+if "%2"=="" goto next
+set BASE_FILE_NAME=%2
+
+:next
 
 rem --------------------------------------------------------
 rem make key file(test.com.key)
@@ -33,7 +37,7 @@ rem del  %BASE_FILE_NAME%.crt
 goto eof
 
 :usage
-echo "usage   : _make_site <common name>"
+echo "usage   : _make_site <common name> [<base file name>]"
 echo "example : _make_site test.com"
 
 :eof
