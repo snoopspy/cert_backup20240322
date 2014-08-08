@@ -22,7 +22,7 @@ openssl genrsa -out root\root.key 1024
 rem --------------------------------------------------------
 rem make csr file(root.csr)
 rem --------------------------------------------------------
-openssl req -new -subj "/C=KR/CN=%COMMON_NAME%" -key root\root.key -out root\root.csr
+openssl req -config openssl.cfg -new -subj "/C=KR/CN=%COMMON_NAME%" -key root\root.key -out root\root.csr
 
 rem --------------------------------------------------------
 rem make crt file(root.crt - cacert.pem)
