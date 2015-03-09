@@ -7,7 +7,6 @@ SSL Certificate Manager
 
 # Usage
   
-  * Run _clear_site.sh to clear site certificate files.
+  * Run _clear_site.sh to clear all site certificate files.
   * Run _init_site.sh to initialize the folder.
-  * Run _make_site.sh to create a certain site certificate files.
-
+  * Run _make_site.sh to create site certificate files.
