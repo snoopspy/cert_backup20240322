@@ -2,7 +2,6 @@
 # rm_folder
 # --------------------------------------------------------
 rm_folder() {
-	echo "rm_folder " "$1"
 	find -name "$1" -exec rm -rf {} \; | true
 }
 

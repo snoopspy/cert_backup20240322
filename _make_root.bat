@@ -36,6 +36,6 @@ echo "example : _make_root gilgil"
 goto eof
 
 :exist_error
-echo root folder already exists
+echo "root folder already exists"
 
 :eof

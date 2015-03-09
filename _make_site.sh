@@ -12,8 +12,6 @@ BASE_FILE_NAME="$1"
 if  [ ! -z "$2" ]; then
 	BASE_FILE_NAME="$2"
 fi
-echo $COMMON_NAME
-echo $BASE_FILE_NAME
 
 # --------------------------------------------------------
 # make key file(foo.com.key)
