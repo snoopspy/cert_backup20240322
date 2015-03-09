@@ -6,7 +6,6 @@ SSL Certificate Manager
   * Register root/root.crt in your system's SSL certificate repository.
 
 # Usage
-  
-  * Run _clear_site.sh to clear all site certificate files.
+  * Run _clear_site.sh to clear all site certificate files(same as git clean -fxd).
   * Run _init_site.sh to initialize the folder.
   * Run _make_site.sh to create site certificate files.
