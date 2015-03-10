@@ -7,6 +7,7 @@ del *.pem
 del *.csr
 del *.key
 del *.crt
+del *.pfx
 del .rnd
 
 rem --------------------------------------------------------
