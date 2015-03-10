@@ -30,7 +30,7 @@ openssl ca -config openssl.cfg -batch -startdate 20140301000000Z -enddate 202402
 rem --------------------------------------------------------
 rem make pkcs file(foo.com.pfx)
 rem --------------------------------------------------------
-openssl pkcs12 -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -export -in %BASE_FILE_NAME%.crt -inkey %BASE_FILE_NAME%.key -out %BASE_FILE_NAME%.pfx -name "%COMMON_NAME%" -passin pass:PASSWORD -passout pass:TemporaryPassword
+openssl pkcs12 -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -export -in %BASE_FILE_NAME%.crt -inkey %BASE_FILE_NAME%.key -out %BASE_FILE_NAME%.pfx -name "%COMMON_NAME%" -passin pass: -passout pass:
 
 rem --------------------------------------------------------
 rem make key crt file(foo.com.pem)
