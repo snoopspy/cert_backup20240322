@@ -25,12 +25,12 @@ openssl req -config openssl.cfg -new -subj "/C=KR/CN=%COMMON_NAME%" -key %BASE_F
 rem --------------------------------------------------------
 rem make crt file(foo.com.crt)
 rem --------------------------------------------------------
-openssl ca -config openssl.cfg -batch -startdate 20140301000000Z -enddate 20240227000000Z -policy policy_anything -infiles %BASE_FILE_NAME%.csr -out %BASE_FILE_NAME%.crt
+openssl ca -config openssl.cfg -batch -startdate 20140301000000Z -enddate 20240227000000Z -policy policy_anything -out %BASE_FILE_NAME%.crt -infiles %BASE_FILE_NAME%.csr
 
 rem --------------------------------------------------------
 rem make key crt file(foo.com.pem)
 rem --------------------------------------------------------
-copy %BASE_FILE_NAME%.key + %BASE_FILE_NAME%.crt %BASE_FILE_NAME$.pem
+copy %BASE_FILE_NAME%.key + %BASE_FILE_NAME%.crt %BASE_FILE_NAME%.pem
 rem del %BASE_FILE_NAME%.key // gilgil temp 2015.03.04
 rem del %BASE_FILE_NAME%.csr // gilgil temp 2015.03.04
 rem del %BASE_FILE_NAME%.crt // gilgil temp 2015.03.04
