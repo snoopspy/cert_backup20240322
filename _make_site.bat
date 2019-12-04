@@ -25,7 +25,7 @@ openssl req -config openssl.cfg -new -subj "/C=KR/CN=%COMMON_NAME%" -key %BASE_F
 rem --------------------------------------------------------
 rem make crt file(foo.com.crt)
 rem --------------------------------------------------------
-openssl ca -config openssl.cfg -batch -startdate 20190101000000Z -enddate 20290001000000Z -policy policy_anything -out %BASE_FILE_NAME%.crt -infiles %BASE_FILE_NAME%.csr
+openssl ca -config openssl.cfg -batch -startdate 20190101000000Z -enddate 20290101000000Z -policy policy_anything -out %BASE_FILE_NAME%.crt -infiles %BASE_FILE_NAME%.csr
 
 rem --------------------------------------------------------
 rem make pkcs file(foo.com.pfx)
