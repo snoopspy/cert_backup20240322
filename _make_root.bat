@@ -17,7 +17,7 @@ mkdir root
 rem --------------------------------------------------------
 rem make key file(root.key - cakey.pem)
 rem --------------------------------------------------------
-openssl genrsa -out root\root.key 1024
+openssl genrsa -out root\root.key 4096
 
 rem --------------------------------------------------------
 rem make csr file(root.csr)

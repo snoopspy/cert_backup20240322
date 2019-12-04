@@ -22,7 +22,7 @@ mkdir root
 # --------------------------------------------------------
 # make key file(root.key - cakey.pem)
 # --------------------------------------------------------
-openssl genrsa -out root/root.key 1024
+openssl genrsa -out root/root.key 4096
 
 # --------------------------------------------------------
 # make csr file(root.csr)
